@@ -17,7 +17,6 @@ export class AudioManager {
 
     if (!original) return;
 
-    // создаём клон чтобы звуки могли наслаиваться
     const sound = original.cloneNode();
 
     sound.volume = original.volume;

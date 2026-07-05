@@ -10,7 +10,7 @@ export class Player {
   }
 
   async init() {
-    const tex = await Assets.load("./images/plane.png");
+    const tex = await Assets.load(import.meta.env.BASE_URL + "images/plane.png");
 
     this.sprite = new Sprite(tex);
     this.sprite.anchor.set(0.5, 1);

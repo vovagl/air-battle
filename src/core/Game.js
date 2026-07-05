@@ -46,9 +46,10 @@ export class Game {
 
   
   initSounds() {
-    this.audio.load("flying", "./sounds/flying.mp3", 1);
-    this.audio.load("shoot", "./sounds/shoot.mp3", 1);
-    this.audio.load("explosion", "./sounds/explosion.mp3", 1);
+    const base = import.meta.env.BASE_URL;
+    this.audio.load("flying", base + "sounds/flying.mp3", 1);
+    this.audio.load("shoot", base + "sounds/shoot.mp3", 1);
+    this.audio.load("explosion", base + "sounds/explosion.mp3", 1);
   }
 
   async init() {
@@ -129,7 +130,7 @@ resume() {
   }
 
   async loadExplosion() {
-    const sheet = await Assets.load("/images/explosion.png");
+    const sheet = await Assets.load(import.meta.env.BASE_URL + "images/explosion.png");
 
     const widths = [287, 383, 448, 440, 520, 480, 424];
     const h = 450;
